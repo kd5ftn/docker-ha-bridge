@@ -15,7 +15,7 @@ RUN apt-get update && \
 RUN mkdir -p /root/habridge/ && \
     cd /root/habridge && \
     VERSION="$(curl -sX GET https://api.github.com/repos/bwssytems/ha-bridge/releases/latest | grep 'tag_name' | cut -d\" -f4)" && \
-    wget https://github.com/bwssytems/ha-bridge/releases/download/v"$VERSION"/ha-bridge-"$VERSION".jar    
+    wget https://github.com/bwssytems/ha-bridge/releases/download/v"$VERSION"/ha-bridge-"$VERSION".jar && \   
     mv ha-bridge-"$VERSION".jar ha-bridge.jar
 
 CMD [ "java -jar -Dserver.port=80 -Dconfig.file=/root/habridge/habridge.config ha-bridge.jar 2>&1 | tee /root/habridge/ha-bridge.log"

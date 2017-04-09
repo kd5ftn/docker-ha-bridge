@@ -14,7 +14,7 @@ RUN apt-get update && \
     
 RUN mkdir -p /root/habridge/ && \
     cd /root/habridge && \
-    VERSION="$(curl -sX GET https://api.github.com/repos/bwssytems/ha-bridge/releases/latest | grep 'tag_name' | cut -d\" -f4)" && \
+    VERSION="$(curl -sX GET https://api.github.com/repos/bwssytems/ha-bridge/releases/latest | grep 'tag_name' | cut -d\" -f4 | cut -b 1 --complement)" && \
     wget https://github.com/bwssytems/ha-bridge/releases/download/v"$VERSION"/ha-bridge-"$VERSION".jar && \   
     mv ha-bridge-"$VERSION".jar ha-bridge.jar
 

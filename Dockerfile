@@ -1,5 +1,5 @@
 #Resin.io produces base ARM images for raspberry pi. This one adds QEMU support in order to support cross-building (for DockerHub to build ARM projects)
-FROM resin/rpi-raspbian:latest
+FROM codingwell/rpi-raspbian-qemu:latest
 
 RUN [ "cross-build-start" ]
 

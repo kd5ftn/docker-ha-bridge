@@ -18,6 +18,6 @@ RUN mkdir -p /root/habridge/ && \
     wget https://github.com/bwssytems/ha-bridge/releases/download/v"$VERSION"/ha-bridge-"$VERSION".jar && \   
     mv ha-bridge-"$VERSION".jar ha-bridge.jar
 
-CMD [ "java -jar -Dserver.port=80 -Dconfig.file=/root/habridge/habridge.config ha-bridge.jar 2>&1 | tee /root/habridge/ha-bridge.log"
+CMD [ "java -jar -Dserver.port=80 /root/habridge/ha-bridge.jar 2>&1 | tee /root/habridge/data/ha-bridge.log"
 
 RUN [ "cross-build-end" ]

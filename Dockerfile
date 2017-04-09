@@ -9,7 +9,7 @@ MAINTAINER Nick McCarthy
 #VOLUME ["/config"]
 RUN apt-get update && \
     apt-get upgrade && \
-    apt-get install -y curl wget oracle-java8-jdk && \
+    apt-get install -y curl wget oracle-java8-jdk 
 
     
 RUN mkdir -p /root/habridge/ && \
